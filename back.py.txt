@@ -1,0 +1,44 @@
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+@app.route("/convert", methods=["POST"])
+def convert():
+    """Converts a value from one unit of measurement to another."""
+
+    from_unit = request.form["from-unit"]
+    to_unit = request.form["to-unit"]
+    value = float(request.form["value"])
+
+    conversion_result = unit_conversion(from_unit, to_unit, value)
+
+    return render_template("index.html", conversion_result=conversion_result)
+
+@app.route("/analyze", methods=["POST"])
+def analyze():
+    """Calculates the nutritional content of a recipe."""
+
+    ingredients = request.form["ingredients"]
+    ingredients = ingredients.split("\n")
+
+    nutritional_info = nutritional_analysis(ingredients)
+
+    return render_template("index.html", nutritional_info=nutritional_info)
+
+@app.route("/adjust", methods=["POST"])
+def adjust():
+    """Adjusts the amount of a recipe based on the desired number of servings."""
+
+    servings = int(request.form["servings"])
+
+    adjusted_recipe = adjust_recipe(servings)
+
+    return render_template("index.html", adjusted_recipe=adjusted_recipe)
+
+@app.route("/scale", methods=["POST"])
+def scale():
+    """Scales a recipe up or down by a factor."""

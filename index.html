@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food and Baking Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Food and Baking Calculator</h1>
+
+    <div id="unit-conversion">
+        <h2>Unit Conversion</h2>
+
+        <select id="from-unit">
+            <option value="cup">Cup</option>
+            <option value="gram">Gram</option>
+            <option value="tablespoon">Tablespoon</option>
+            <option value="teaspoon">Teaspoon</option>
+        </select>
+
+        <input type="number" id="value">
+
+        <select id="to-unit">
+            <option value="cup">Cup</option>
+            <option value="gram">Gram</option>
+            <option value="tablespoon">Tablespoon</option>
+            <option value="teaspoon">Teaspoon</option>
+        </select>
+
+        <button type="button" id="convert-button">Convert</button>
+
+        <p id="conversion-result"></p>
+    </div>
+
+    <div id="nutritional-analysis">
+        <h2>Nutritional Analysis</h2>
+
+        <img src="/images/cake.jpg" alt="Cake">
+
+        <ul id="ingredient-list"></ul>
+
+        <button type="button" id="analyze-button">Analyze</button>
+
+        <p id="nutritional-info"></p>
+    </div>
+
+    <div id="recipe-planning">
+        <h2>Recipe Planning</h2>
+
+        <input type="number" id="servings">
+
+        <button type="button" id="adjust-recipe-button">Adjust Recipe</button>
+
+        <button type="button" id="scale-recipe-button">Scale Recipe</button>
+    </div>
+
+    <div id="other-features">
+        <h2>Other Features</h2>
+
+        <input type="number" id="flour">
+
+        <button type="button" id="calculate-baking-powder-button">Calculate Baking Powder</button>
+
+        <p id="baking-powder-result"></p>
+
+        <input type="number" id="butter">
+
+        <select id="butter-unit">
+            <option value="tablespoon">Tablespoon</option>
+            <option value="teaspoon">Teaspoon</option>
+        </select>
+
+        <button type="button" id="find-butter-equivalent-button">Find Butter Equivalent</button>
+
+        <p id="butter-equivalent-result"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
